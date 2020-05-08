@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory
+from hovorka_simulator import run_simulation
 import random
 
 app = Flask(__name__)
@@ -17,6 +18,11 @@ def home(path):
 @app.route("/rand")
 def hello():
     return str(random.randint(0, 100))
+
+
+@app.route("/diabetes")
+def diabetes_sim():
+    return str(run_simulation())
 
 
 if __name__ == "__main__":
