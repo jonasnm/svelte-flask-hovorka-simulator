@@ -2,7 +2,7 @@
   let bg = -1;
 
   function getBg() {
-    fetch("./diabetes")
+    fetch("https://diabetessimapi.herokuapp.com/")
       .then(d => d.json())
     //   .then(d => (rand = d));
       .then(function (d) {
@@ -51,3 +51,9 @@
 <h1>Press button to load standard BG values</h1>
 <button on:click={loadShow}>Load</button> 
 <canvas id="myChart"></canvas> 
+
+<style>
+:global(body){
+	max-width: 1200px;
+}
+</style>
